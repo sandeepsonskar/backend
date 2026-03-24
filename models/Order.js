@@ -1,8 +1,13 @@
 const mongoose = require("mongoose");
 
-const schema = new mongoose.Schema({
+const OrderSchema = new mongoose.Schema({
+  order_id: String,
   payment_id: String,
-  date: {type: Date, default: Date.now}
+  status: String,
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
 });
 
-module.exports = mongoose.model("Order", schema);
+module.exports = mongoose.model("Order", OrderSchema);
